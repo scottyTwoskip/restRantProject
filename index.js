@@ -1,11 +1,13 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-    res.send('Hello world')
+    res.send('Hello')
 })
 
-app.listen(port, ()=> {
-    console.log(`server is listening on ${port}`)
+app.get('*', (req, res) => {
+    res.status(404).send('<h1>404 page</h1>')
 })
+app.listen(process.env.PORT)
