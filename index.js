@@ -3,8 +3,10 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+app.use('/places', require('./controllers/places'))
+
 app.get('/', (req, res) => {
-    res.send('Hello')
+    res.send('Hello world!')
 })
 
 app.get('*', (req, res) => {
