@@ -2,7 +2,7 @@
 # Project REST-Rant
 
 1. Main purpose of app:
-    -REST-Rant is an app where users can review restaurants.
+    -REST-Rant is an app where users can review and rate restaurants.
 2. Tech Usage:
     -CSS Framework: Bootstrap
     -stack: mongoDb, express, NodeJs
@@ -38,4 +38,4 @@
 
 notes:
     add ratiing for a place as bonus or possibly a comment area
-    
+
