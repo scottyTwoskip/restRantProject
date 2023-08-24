@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
@@ -9,11 +9,11 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use('/places', require('./controllers/places'))
 
 app.get('/', (req, res) => {
-    res.render('Home')
+    res.render('home')
 })
 
 app.get('*', (req, res) => {
     res.render('error404')
 })
 
-app.listen(process.env.PORT)
+app.listen(port)
