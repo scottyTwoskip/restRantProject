@@ -39,3 +39,8 @@
 notes:
     add ratiing for a place as bonus or possibly a comment area
 
+credit:
+ https://unsplash.com/photos/X64CwnARqzM, Chris Knight's photo.
+https://unsplash.com/@foodfaithfit, Taylor Kiser's Photo. 
+
+
