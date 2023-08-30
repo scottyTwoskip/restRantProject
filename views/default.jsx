@@ -11,9 +11,25 @@ function Default(html) {
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
           crossOrigin="anonymous"
         />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="/css/style.css" />
       </head>
-      <body>{html.children}</body>
+      <body>
+        <nav>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/places">Places</a>
+            </li>
+            <li>
+              <a href="/places/new">Add Place</a>
+            </li>
+          </ul>
+        </nav>
+
+        {html.children}
+      </body>
     </html>
   );
 }
