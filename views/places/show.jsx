@@ -50,11 +50,11 @@ function show(data) {
           <div className="col-sm-8">{data.place.comments}</div>
         </div>
         {/* buttons */}
-        <a href={`/places/${data.id}/edit`} className="btn btn-warning">
+        <a href={`/places/${data.place._id}/edit`} className="btn btn-warning">
           Edit
         </a>
 
-        <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
+        <form method="POST" action={`/places/${data.place._id}?_method=DELETE`}>
           <button type="submit" className="btn btn-danger">
             Delete
           </button>

@@ -4,7 +4,7 @@ const Def = require("../default.jsx");
 function edit_form(data) {
   return (
     <Def>
-      <form method="POST" action={`/places/${data.id}?_method=PUT`}>
+      <form method="POST" action={`/places/${data.place._id}?_method=PUT`}>
         <div className="form-group">
           <label htmlFor="name">Place Name</label>
           <input
