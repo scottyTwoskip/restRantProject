@@ -14,19 +14,12 @@ function show(data) {
         />
 
         <div className="container">
-          <div className="row">
-            <div className="col-sm-4">
-              <strong>State:</strong>
-            </div>
-            <div className="col-sm-8">{data.place.state}</div>
-          </div>
-          <div className="row">
-            <div className="col-sm-4">
-              <strong>City:</strong>
-            </div>
-            <div className="col-sm-8">{data.place.city}</div>
-          </div>
-
+          <h3>
+            Located in {data.place.city}, {data.place.state}
+          </h3>
+          <h3>
+            {data.place.showEstablished()}
+          </h3>
           <div className="row">
             <div className="col-sm-4">
               <strong>Cuisine Type:</strong>

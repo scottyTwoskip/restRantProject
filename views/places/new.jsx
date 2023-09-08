@@ -32,6 +32,17 @@ function new_form() {
               required
             />
           </div>
+          <div className="form-group">
+            <label htmlFor="founded">Founded year*</label>
+            <input
+              type="number"
+              className="form-control"
+              id="founded"
+              name="founded"
+              value={new Date().getFullYear()}
+              required
+            />
+          </div>
           <button className="btn btn-primary">Submit Place</button>
         </form>
       </main>

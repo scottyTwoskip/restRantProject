@@ -52,6 +52,17 @@ function edit_form(data) {
             required
           />
         </div>
+        <div className="form-group">
+          <label htmlFor="founded">Founded year*</label>
+          <input
+            type="number"
+            value={data.place.founded}
+            className="form-control"
+            id="founded"
+            name="founded"
+            required
+          />
+        </div>
         <button className="btn btn-primary">Submit Place</button>
       </form>
     </Def>
