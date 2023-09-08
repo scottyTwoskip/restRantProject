@@ -2,6 +2,25 @@ const React = require("react");
 const Def = require("../default");
 
 function show(data) {
+  let comments = (
+    <h3 className="inactive">
+      no comments yet
+    </h3>
+  )
+    if (data.place.comments.length) {
+      comments = data.place.comments.map(c => {
+        return (
+          <div className="border">
+            <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
+            <h4>{c.content}</h4>
+            <h3>
+              <stong>- {c.author}</stong>
+            </h3>
+            <h4>Rating: {c.stars}</h4>
+          </div>
+        )
+      })
+    }
   return (
     <Def>
       <main>
@@ -38,10 +57,19 @@ function show(data) {
         <div className="row">
           <div className="col-sm-4">
             <strong>Comments:</strong>
-            <div>none</div>
+            {comments}
           </div>
-          <div className="col-sm-8">{data.place.comments}</div>
         </div>
+        <form action={`/places/${data.place._id}/rant`} method="POST">
+        <div className="form-group">
+            <label htmlFor="author">Author</label>
+            <input className="form-control" id="author" name="author" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="rant">Rant?</label>
+            <input type= 'checkbox'className="form-control" id="rant" name="rant" />
+          </div>
+        </form>
         {/* buttons */}
         <a href={`/places/${data.place._id}/edit`} className="btn btn-warning">
           Edit

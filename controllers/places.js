@@ -18,7 +18,8 @@ router.get("/new", (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const id = req.params.id
-    const place = await db.Place.findById(id)
+    const place = await db.Place.findById(id).populate('comments')
+    console.log(place)
     res.render("places/show", {place});
   } catch (error) {
     console.error(error)
@@ -68,5 +69,22 @@ router.delete("/:id", async(req, res) => {
     res.render('error404')
   }
 });
+router.post("/:id/rant", async(req, res)=>{
+  try{
+    const id = req.params.id
+    const place = await db.Place.findById(id)
+    if(!place){
+      res.render('error404')
+      return
+    }
+    const comment = await db.Comment.create(req.body)
+    place.comments.push(comment)
+    await place.save()
+    res.redirect(`/places/${id}`)
+  }catch (error) {
+    console.error(error)
+    res.render('error404')
+  }
+})
 
 module.exports = router;
