@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "nodemon index.js",
-    "seed": "node seeders/seed-places"
+    "seed:place": "node seeders/seed-places",
+    "seed:comment": "node seeders/seed-comments"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

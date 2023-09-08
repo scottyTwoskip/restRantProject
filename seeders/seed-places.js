@@ -1,12 +1,8 @@
-require('dotenv').config()
-const mongoose = require('mongoose')
+const db = require('../models')
 
-const placeModel = require('../models/places')
-
-mongoose.connect(process.env.MONGO_URI)
-placeModel.deleteMany({})
+db.Place.deleteMany({})
     .then(() => {
-        return placeModel.create([{
+        return db.Place.create([{
             name: 'H-Thai-ML',
             city: 'Seattle',
             state: 'WA',
