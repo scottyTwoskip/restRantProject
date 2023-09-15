@@ -77,6 +77,7 @@ router.post("/:id/rant", async(req, res)=>{
       res.render('error404')
       return
     }
+    req.body.rant = !!req.body.rant
     const comment = await db.Comment.create(req.body)
     place.comments.push(comment)
     await place.save()
@@ -86,5 +87,6 @@ router.post("/:id/rant", async(req, res)=>{
     res.render('error404')
   }
 })
+
 
 module.exports = router;
